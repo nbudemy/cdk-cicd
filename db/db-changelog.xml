@@ -7,6 +7,21 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd
     http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd ">
 
+    <property name="db_user_sdapi_username" value="sdapi" />
+    <property name="db_user_sdapi_password" value="{sdapiPassword}"/>
+    <property name="db_user_sdem_username" value="sdem" />
+    <property name="db_user_sdem_password" value= "${sdemPassword}"/>
+
+    <preConditions>
+        <changeLogPropertyDefined property="db_user_sdapi_username" />
+        <changeLogPropertyDefined property="db_user_sdapi_password" />
+        <changeLogPropertyDefined property="db_user_sdem_username" />
+        <changeLogPropertyDefined property="db_user_sdem_password" />
+    </preConditions>
+
     <include file="changelog/baseline_soccer_data.sql" />
+    <include file="changelog/uuid_functions.sql" />
+    <include file="changelog/add-sdapi-user.sql" />
+    <include file="changelog/add-sdem-user.sql" />
 
 </databaseChangeLog>
