@@ -23,5 +23,6 @@
     <include file="changelog/uuid_functions.sql" />
     <include file="changelog/add-sdapi-user.sql" />
     <include file="changelog/add-sdem-user.sql" />
+    <include file="fill-area-table-with-opta-mappings.sql" />
 
 </databaseChangeLog>
